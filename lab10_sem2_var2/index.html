@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Шахи - CDN React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        #root {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .hobby-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class HobbyCard extends React.Component {
+            render() {
+                return (
+                    <div className="hobby-card">
+                        <h1>Світ шахів</h1>
+                        <p>
+                            Для мене шахи - це ідеальне поєднання інтелектуального виклику та спортивного азарту.
+                            Зараз я активно вивчаю дебюти та вдосконалюю тактичні навички.
+                            Це хобі також надихнуло мене на створення власного ІТ-проєкту, пов'язаного з шахами.
+                        </p>
+                    </div>
+                );
+            }
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<HobbyCard />);
+    </script>
+</body>
+
+</html>
