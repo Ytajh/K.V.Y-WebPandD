@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛБ4 по JS</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #fff;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2980b9;
+        }
+
+        .task-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 0px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .task-card h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .img_holder {
+            display: flex;
+        }
+
+        .img_holder img {
+            margin-left: 30px;
+            margin-right: 30px;
+            width: 300px;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        .task-card p {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+        }
+
+        .task-card a {
+            font-size: 1.95rem;
+            margin-left: 30px;
+            margin-right: 30px;
+            color: #7f8c8d;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .num-p {
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .result-area {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px dashed #ccc;
+            min-height: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Лабораторна робота 4. Функції в JS</h1>
+
+        <div class="task-card">
+            <h2>Завдання 1. Функція seconds</h2>
+            <input type="text" id="seconds-input" placeholder="Введіть значення total">
+            <button id="btn-1" onclick="showSeconds()">Обчислити</button>
+            <div id="res-1" class="result-area">Тут буде результат...</div>
+        </div>
+        <div class="task-card">
+            <h2>Завдання 2. Функція perimeter</h2>
+            <input type="text" id="side-input" placeholder="Введіть довжину сторони">
+            <input type="text" id="count-side-input" placeholder="Введіть кількість сторін">
+            <button id="btn-2" onclick="showPerimeter()">Обчислити</button>
+            <div id="res-2" class="result-area">Тут буде результат...</div>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 3. Функція FizzBuzz</h2>
+            <input type="text" id="n-input" placeholder="Введіть n">
+            <button id="btn-3" onclick="showFizzBuzz()">Обчислити</button>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 4. Функція calculate</h2>
+            <input type="text" id="first-input" placeholder="Введіть перше число">
+            <input type="text" id="second-input" placeholder="Введіть друге число">
+            <input type="text" id="third-input" placeholder="Введіть третє число">
+            <button id="btn-4" onclick="showMean()">Обчислити</button>
+            <div id="res-4" class="result-area">Тут буде результат...</div>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 5. Функція isDivisible</h2>
+            <input type="text" id="n-5" placeholder="Введіть n">
+            <input type="text" id="x-5" placeholder="Введіть x">
+            <input type="text" id="y-5" placeholder="Введіть y">
+            <button id="btn-5" onclick="showDivisible()">Обчислити</button>
+            <div id="res-5" class="result-area">Тут буде результат...</div>
+        </div>
+        <div class="task-card">
+            <h2>Завдання 6. Функція для роботи з масивом</h2>
+            <input type="text" id="n-6" placeholder="Введіть n">
+            <button id="btn-6" onclick="showArrayResults()">Обчислити</button>
+            <div id="res-6" class="result-area">Тут буде результат...</div>
+        </div>
+        <div class="task-card">
+            <h2>Завдання 7. Функція для двовимірного масиву</h2>
+            <button id="btn-7" onclick="showMatrixResults()">Обчислити</button>
+            <div id="res-7" class="result-area">Тут буде результат...</div>
+        </div>
+        <div class="task-card">
+            <h2>Завдання 8. Арифметичні операції</h2>
+            <input type="text" id="num1-8" placeholder="Число 1">
+            <input type="text" id="num2-8" placeholder="Число 2">
+            <select id="op-8">
+                <option value="add">+</option>
+                <option value="sub">-</option>
+                <option value="mul">*</option>
+                <option value="div">/</option>
+            </select>
+            <button id="btn-8" onclick="showCalc()">Обчислити</button>
+            <div id="res-8" class="result-area">Тут буде результат...</div>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 9. Аналіз числа</h2>
+            <input type="text" id="n-9" placeholder="Введіть число">
+            <button id="btn-9" onclick="showNumberAnalysis()">Аналізувати</button>
+            <div id="res-9" class="result-area">Тут буде результат...</div>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 10. Перетворення масиву</h2>
+            <input type="text" id="arr-10" placeholder="Числа через кому (1, b, 3)">
+            <button id="btn-10" onclick="showArrayTransform()">Перетворити</button>
+            <div id="res-10" class="result-area">Тут буде результат...</div>
+        </div>
+        <div class="task-card">
+            <h2>Завдання 11. Видалення дублікатів</h2>
+            <input type="text" id="arr-11" placeholder="Введіть елементи (1, 2, 2, 4...)">
+            <button id="btn-11" onclick="showUniqueResults()">Очистити від дублікатів</button>
+            <div id="res-11" class="result-area">Тут буде результат...</div>
+        </div>
+    </div>
+    <script src="/lab4_sem2/main.js"></script>
+</body>
+
+</html>
