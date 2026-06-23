@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛБ1 по JS</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #fff;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: "Segoe UI", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2980b9;
+        }
+
+        .task-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 0px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .task-card h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .task-card p {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result-area {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px dashed #ccc;
+            min-height: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Лабораторна робота 1. JS цикли та умови</h1>
+
+        <div class="task-card">
+            <h2>Завдання 1. Прості числа</h2>
+            <p>Використання циклу <strong>while</strong>.</p>
+            <button id="btn-1">Виконати</button>
+            <div id="res-1" class="result-area">Тут буде результат...</div>
+        </div>
+        <div class="task-card">
+            <h2>Завдання 2. Парні/непарні</h2>
+            <p>Використання циклу <strong>do...while</strong> з текстовим описом.</p>
+            <button id="btn-2">Виконати</button>
+            <div id="res-2" class="result-area">Тут буде результат...</div>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 3. Ділення числа 10000</h2>
+            <p>Результат <code>result</code> та <code>counter</code> буде виведено в консоль (та дубльовано сюди).</p>
+            <button id="btn-3">Виконати</button>
+            <div id="res-3" class="result-area">Результат дивіться в консолі (F12)</div>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 4. Пори року та назва місяця</h2>
+            <p>Введення через <strong>prompt</strong>, виведення через <strong>alert</strong>.</p>
+            <button id="btn-4">Запустити prompt</button>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 5. Конвертер Цельсій -> Фаренгейт</h2>
+            <p>Формула: Tf = (9/5) * Tc + 32</p>
+            <button id="btn-5">Ввести температуру</button>
+        </div>
+
+        <div class="task-card">
+            <h2>Завдання 6. День тижня</h2>
+            <p>Введення числа 1-7 через <strong>prompt</strong>, виведення в вікно браузера.</p>
+            <button id="btn-6">Вибрати день</button>
+            <div id="res-6" class="result-area">...</div>
+        </div>
+    </div>
+    <script src="/lab1_sem2/tasks.js"></script>
+</body>
+
+</html>
